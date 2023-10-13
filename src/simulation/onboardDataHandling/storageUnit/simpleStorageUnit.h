@@ -30,6 +30,7 @@ class SimpleStorageUnit: public DataStorageUnitBase {
 public:
     SimpleStorageUnit();
     ~SimpleStorageUnit();
+    void setDataBuffer(double data);
 
 private:
     void customReset(uint64_t CurrentClock); //!< Custom Reset method

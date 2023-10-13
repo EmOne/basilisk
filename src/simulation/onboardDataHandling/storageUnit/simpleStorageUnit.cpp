@@ -79,3 +79,25 @@ void SimpleStorageUnit::integrateDataStatus(double currentTime){
     this->previousTime = currentTime;
     return;
 }
+
+/*! Adds a specific amount of data to the storedData vector once
+ @return void
+ */
+void SimpleStorageUnit::setDataBuffer(double data){
+
+    //! - If the storage capacity has not been reached
+    if ((this->storedDataSum < this->storageCapacity)) {
+        //! - If no data has been stored before, creates a standard partition
+        if (storedData.size() == 0){
+            this->storedData.push_back({{'S','T','O','R','E','D',' ','D','A','T','A'}, 0});
+        }
+        //! - Only perform the operation if it will not result in less than 0 data
+        if ((this->storedData[(size_t) 0].dataInstanceSum + data) >= 0) {
+            this->storedData[(size_t) 0].dataInstanceSum += data;
+        }
+    }
+    // ! - Sum all data in storedData vector
+    this->storedDataSum = this->storedData[0].dataInstanceSum;
+
+    return;
+}

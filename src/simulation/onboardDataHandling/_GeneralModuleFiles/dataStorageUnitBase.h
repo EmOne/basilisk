@@ -45,6 +45,7 @@ public:
     void Reset(uint64_t CurrentSimNanos);
     void addDataNodeToModel(Message<DataNodeUsageMsgPayload> *tmpNodeMsg); //!< Adds dataNode to the storageUnit
     void UpdateState(uint64_t CurrentSimNanos);
+    //void setDataBuffer(std::vector<std::string> dataName, std::vector<double> data); //!< Sets the data buffer to the dataNames vector
 
 protected:
     void writeMessages(uint64_t CurrentClock);

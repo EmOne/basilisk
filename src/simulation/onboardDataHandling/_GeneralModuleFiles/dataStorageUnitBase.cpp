@@ -29,6 +29,10 @@ DataStorageUnitBase::DataStorageUnitBase(){
     this->nodeDataUseInMsgs.clear(); //! - Clear the vector of input messages.
     this->storedDataSum = 0.0; //! - Initialize the dataSum to 0.
     this->netBaud = 0.0; //! - Initialize the netBaudRate to 0.
+    //! - Zero out the partitions
+    for(uint64_t i = 0; i < this->storedData.size(); i++){
+        this->storedData[i].dataInstanceSum = 0.0;
+    }
     return;
 }
 
@@ -48,11 +52,6 @@ DataStorageUnitBase::~DataStorageUnitBase(){
 void DataStorageUnitBase::Reset(uint64_t CurrentSimNanos)
 {
     this->previousTime = 0;
-
-    //! - Zero out the partitions
-    for(uint64_t i = 0; i < this->storedData.size(); i++){
-        this->storedData[i].dataInstanceSum = 0.0;
-    }
 
     //! - call the custom environment module reset method
     customReset(CurrentSimNanos);
