@@ -71,7 +71,10 @@ Version |release|
   prior versions of Xcode.
 - Fixed a bug in the conanfile where the ``stderr`` output from a ``subprocess.Popen`` call was being interpreted as an
   error. Rather, the process return code (0 for success, and anything else for failure) indicates the success.
-
+- Refactored ``GravityEffector``. Adding custom gravity models can now be done by subclassing ``GravityModel``. The
+  utility method ``useSphericalHarmonicsGravityModel`` has been added to planetary body objects, which makes the body
+  use spherical harmonics and loads them from a file with a single command. Similarly, the methods ``usePolyhedralGravityModel``
+  and ``usePointMassGravityModel`` have been added.
 
 Version 2.2.0 (June 28, 2023)
 -----------------------------
