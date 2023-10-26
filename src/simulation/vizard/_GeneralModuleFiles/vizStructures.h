@@ -401,6 +401,7 @@ VizSettings
     int showLightLabels=0; //!< Toggle to label spacecraft light elements, Value of 0 (protobuffer default) to use viz default, -1 for false, 1 for true
     double celestialBodyHelioViewSizeMultiplier = -1; //!< Control the display size of celestial bodies in the Solar System View, values greater than 0, use negative value to use viz default
     int showMissionTime = 0;  //!< flag to show the mission time instead of the simulation time. Value of 0 (protobuffer default) to use viz default, -1 for false, 1 for true
+    std::string keyboardLiveInput = ""; //!< string of alphanumeric key inputs to listen for during 2-way communication
 }VizSettings;
 
 

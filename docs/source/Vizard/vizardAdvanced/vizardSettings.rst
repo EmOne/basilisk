@@ -222,7 +222,9 @@ default setting for that behavior.
       - int
       - flag to show the mission time instead of the simulation time. Value of 0 (protobuffer default)
         to use viz default, -1 for false, 1 for true
-
+    * - ``keyboardLiveInput``
+      - string
+      - string of alphanumeric key inputs to listen for during 2-way communication
 
 
 While the prior settings are only read once during start up, the following settings are checked
