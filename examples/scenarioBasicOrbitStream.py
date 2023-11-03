@@ -88,7 +88,7 @@ from Basilisk.simulation import spacecraft
 from Basilisk.utilities import (SimulationBaseClass, macros, orbitalMotion,
                                 simIncludeGravBody, unitTestSupport, vizSupport)
 from Basilisk.simulation import simSynch
-
+from Basilisk.simulation import vizInterface
 
 def run(show_plots, liveStream, timeStep, orbitCase, useSphericalHarmonics, planetCase):
     """
@@ -199,7 +199,7 @@ def run(show_plots, liveStream, timeStep, orbitCase, useSphericalHarmonics, plan
     if useSphericalHarmonics:
         simulationTime = macros.sec2nano(3. * P)
     else:
-        simulationTime = macros.sec2nano(0.75 * P)
+        simulationTime = macros.sec2nano(0.05 * P)
 
     #
     #   Setup data logging before the simulation is initialized
@@ -218,9 +218,29 @@ def run(show_plots, liveStream, timeStep, orbitCase, useSphericalHarmonics, plan
         scSim.AddModelToTask(simTaskName, clockSync)
 
         # if this scenario is to interface with the BSK Viz, uncomment the following line
-        vizSupport.enableUnityVisualization(scSim, simTaskName, scObject
-                                            , liveStream=True
-                                            )
+        viz = vizSupport.enableUnityVisualization(scSim, simTaskName, scObject
+                                                  , liveStream=True
+                                                  )
+
+        panel1 = vizInterface.EventDialog()
+        panel1.eventHandlerID = "Panel Name 1"
+        panel1.displayString = "this is a test panel"
+        panel1.userOptions.append("Option A")
+        panel1.userOptions.append("Option B")
+
+        panel2 = vizInterface.EventDialog()
+        panel2.eventHandlerID = "Panel Name 2"
+        panel2.displayString = "this is a second test panel"
+        panel2.userOptions.append("Option A")
+        panel2.userOptions.append("Option B")
+        panel2.userOptions.append("Option C")
+        panel2.userOptions.append("Option D")
+
+        # del viz.eventDialogs[:]
+        viz.eventDialogs.clear()
+        viz.eventDialogs.append(panel1)
+        viz.eventDialogs.append(panel2)
+
 
     #
     #   initialize Simulation:  This function clears the simulation log, and runs the self_init()
