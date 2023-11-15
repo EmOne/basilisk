@@ -730,7 +730,7 @@ void VizInterface::WriteProtobuffer(uint64_t CurrentSimNanos)
         panel->set_usesimelapsedtimeforduration(this->eventDialogs.at(k)->useSimElapsedTimeForDuration);
         panel->set_useconfirmationpanel(this->eventDialogs.at(k)->useConfirmationPanel);
         panel->set_hideonselection(this->eventDialogs.at(k)->hideOnSelection);
-
+        panel->set_dialogformat(this->eventDialogs.at(k)->dialogFormat);
 
     }
 

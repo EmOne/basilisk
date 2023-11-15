@@ -431,6 +431,7 @@ EventDialog
     bool useSimElapsedTimeForDuration=false; //!< [seconds] If true and duration of display is set, use the sim elapsed time to calculate when to hide window. If false, use real time (system clock).
     int useConfirmationPanel=0; //!< Should event handler pop up a confirmation window before sending back response, -1 to not show confirmation panel, 0 to use viz default, and 1 to require a user confirmation of their selection
     int hideOnSelection=0; //!< Should the panel disappear after the user has selected an option?, -1 to continue to show panel, 0 to use viz default, and 1 to hide panel after user makes a selection, 2 to destroy panel after user makes a selection
+    std::string dialogFormat="none"; //!< Select format for dialog box: WARNING, CAUTION, or none to use viz default format
 }EventDialog;
 
 
