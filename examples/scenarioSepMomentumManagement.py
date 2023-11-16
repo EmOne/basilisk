@@ -379,13 +379,12 @@ def run(show_plots):
     #
     
     # Set up thruster platform state module
-    pltState = thrusterPlatformState.ThrusterPlatformStateConfig()
-    pltStateWrap = scSim.setModelDataWrap(pltState)
-    pltStateWrap.ModelTag = "thrusterPlatformState"
+    pltState = thrusterPlatformState.thrusterPlatformState()
+    pltState.ModelTag = "thrusterPlatformState"
     pltState.sigma_MB = np.array([0, 0, 0])
     pltState.r_BM_M = [0, 0, 0]
     pltState.r_FM_F = [0, 0, 0]
-    scSim.AddModelToTask(fswTask, pltStateWrap, pltState, 30)
+    scSim.AddModelToTask(fswTask, pltState, 30)
     
     # Set up the CM estimator module
     r_CB_B_0 = [0.04, -0.05, 1.25]
