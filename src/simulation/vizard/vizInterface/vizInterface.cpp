@@ -729,11 +729,8 @@ void VizInterface::WriteProtobuffer(uint64_t CurrentSimNanos)
         panel->set_usesimelapsedtimeforduration(this->eventDialogs.at(k)->useSimElapsedTimeForDuration);
         panel->set_useconfirmationpanel(this->eventDialogs.at(k)->useConfirmationPanel);
         panel->set_hideonselection(this->eventDialogs.at(k)->hideOnSelection);
-
-
     }
-
-
+    this->eventDialogs.clear(); // panel requests should only send to Vizard once
 
     /*! Write timestamp output msg */
     vizProtobufferMessage::VizMessage::TimeStamp* time = new vizProtobufferMessage::VizMessage::TimeStamp;
@@ -1163,12 +1160,10 @@ void VizInterface::WriteProtobuffer(uint64_t CurrentSimNanos)
                     VizUserInputMsgPayload outMsgBuffer;
                     outMsgBuffer = this->userInputMsg.zeroMsgPayload;
 
-                    /*! - Iterate through VizInput_KeyboardInput objects */
-                    if (msgRecv->has_keyinputs()) {
-                        const vizProtobufferMessage::VizInput_KeyboardInput* viki = &(msgRecv->keyinputs());
-                        google::protobuf::int64 frameNumber = msgRecv->framenumber();
-                        const std::string& keys = viki->keys();
 
+                    /*! - Parse keyboard inputs */
+                    const std::string& keys = msgRecv->keyinputs().keys();
+                    if (keys.length() > 0) {
                         outMsgBuffer.keyboardInput = keys;
                     }
                     this->userInputMsg.write(&outMsgBuffer, this->moduleID, CurrentSimNanos);
