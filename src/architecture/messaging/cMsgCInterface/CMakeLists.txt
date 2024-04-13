@@ -11,9 +11,9 @@ set(LIB_NAME "cMsgCInterface")
 
 # Grab the library source files
 file(GLOB C_FILES
-        "${CMAKE_SOURCE_DIR}/../dist3/autoSource/cMsgCInterface/*.cpp"
-        "${CMAKE_SOURCE_DIR}/../dist3/autoSource/cMsgCInterface/*.c"
-        "${CMAKE_SOURCE_DIR}/../dist3/autoSource/cMsgCInterface/*.h"
+        "${CMAKE_SOURCE_DIR}/../build/autoSource/cMsgCInterface/*.cpp"
+        "${CMAKE_SOURCE_DIR}/../build/autoSource/cMsgCInterface/*.c"
+        "${CMAKE_SOURCE_DIR}/../build/autoSource/cMsgCInterface/*.h"
     )
 
 # Add Target

@@ -21,7 +21,7 @@ class GenerateMessages:
     def __init__(self, pathToExternalModules):
         self.messageTemplate = ""
         self.headerTemplate = ""
-        self.autoSourceDestDir = '../../../../dist3/autoSource/'
+        self.autoSourceDestDir = '../../../../build/autoSource/'
         self.destinationDir = os.path.join(self.autoSourceDestDir, 'cMsgCInterface/')
         self.pathToExternalModules = pathToExternalModules
         with open('./cMsgCInterfacePy.i.in', 'r') as f:
@@ -114,7 +114,7 @@ class GenerateMessages:
         """
         Method which call create messages methods for c and Cpp messages for basilisk as well as external messages
         """
-        # append all C msg definitions to the dist3/autoSource/messaging.auto.i file that is imported into messaging.auto.i
+        # append all C msg definitions to the build/autoSource/messaging.auto.i file that is imported into messaging.auto.i
         self.__createMessageC("../..")
         if self.pathToExternalModules and os.path.exists(os.path.join(self.pathToExternalModules,"msgPayloadDefC")):
             self.__createMessageC(self.pathToExternalModules,True)

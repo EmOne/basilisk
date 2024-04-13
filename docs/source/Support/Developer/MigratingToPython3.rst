@@ -31,7 +31,7 @@ Python::
 
 Without modification the user will see an error in Python 3 complaining about an unsupported type conversion::
 
-   File "/Users/hp/Documents/Research/Basilisk/dist3/Basilisk/simulation/sim_model/sim_model.py", line 4351, in logThisMessage
+   File "/Users/hp/Documents/Research/Basilisk/build/Basilisk/simulation/sim_model/sim_model.py", line 4351, in logThisMessage
        return _sim_model.SimModel_logThisMessage(self, messageName, messagePeriod)
    NotImplementedError: Wrong number or type of arguments for overloaded function 'SimModel_logThisMessage'.
      Possible C/C++ prototypes are:

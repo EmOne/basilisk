@@ -2,11 +2,11 @@ from typing import Callable, Any, Sequence, Union, Dict
 
 import numpy as np
 
-from Basilisk.architecture import sysModel
+from Basilisk.architecture import sysModel #bskLogging
 
 LoggingFunction = Callable[[int], Any]
 
-class PythonVariableLogger(sysModel.SysModel):
+class PythonVariableLogger:
     """This a Python Module that will call one or multiple functions
     and store their results. After the simulation is over, these
     values can be retrieved.
@@ -71,7 +71,7 @@ class PythonVariableLogger(sysModel.SysModel):
                 try:
                     val = logging_function(CurrentSimNanos)
                 except Exception as ex:
-                    self.bskLogger.bskLog(sysModel.BSK_ERROR, 
+                    self.bskLogger.bskLog(sysModel.BSK_ERROR, #bskLogger.BSK_ERROR
                                         f"Error while logging '{variable_name}'"
                                         f" in logger '{self.ModelTag}': {ex}")
                     val = None

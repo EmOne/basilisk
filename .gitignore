@@ -4,7 +4,7 @@ CMakeFiles/
 CMakeCache.txt
 .DS_Store
 dist/
-dist3/
+build/
 .pytest_cache 
 docs/html
 docs/build

@@ -161,7 +161,7 @@ If you are developing new modules you often just want to configure the Basilisk 
 
 #. Next, move to the distribution folder to build using a makefile::
 
-        (venv) $ cd dist3
+        (venv) $ cd build
 
 #. You can do a multi core make by running ``make -j<number of cores +1>`` such as::
 

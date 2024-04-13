@@ -193,7 +193,7 @@ class BasiliskConan(ConanFile):
             # clean the distribution folder to start fresh
             self.options.clean = False
             root = os.path.abspath(os.path.curdir)
-            distPath = os.path.join(root, "dist3")
+            distPath = os.path.join(root, "build")
             if os.path.exists(distPath):
                 shutil.rmtree(distPath, ignore_errors=True)
         if self.settings.build_type == "Debug":
@@ -257,7 +257,7 @@ class BasiliskConan(ConanFile):
         root = os.path.abspath(os.path.curdir)
 
         self.folders.source = os.path.join(root, "src")
-        self.folders.build = os.path.join(root, "dist3")
+        self.folders.build = os.path.join(root, "build")
 
         cmake = CMake(self, set_cmake_flags=True, generator=self.generator)
         if self.settings.compiler == "Visual Studio":
@@ -284,10 +284,10 @@ class BasiliskConan(ConanFile):
         else:
             print(f"{statusColor}Finished configuring the Basilisk project.{endColor}")
             if self.settings.os != "Linux":
-                print(f"{statusColor}Please open project file inside dist3 with {self.generator} IDE "
+                print(f"{statusColor}Please open project file inside build with {self.generator} IDE "
                       f"and build the project for {self.settings.build_type}{endColor}")
             else:
-                print(f"{statusColor}Please go to dist3 folder and run command "
+                print(f"{statusColor}Please go to build folder and run command "
                       f"`make -j <number of threads to use>`{endColor}")
         return
 
@@ -322,7 +322,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # set the build destination folder
-    buildFolderName = 'dist3/conan'
+    buildFolderName = 'build/conan'
 
     # run the auto-module generation script
     # this ensures that this script is up to date with the latest BSK code base

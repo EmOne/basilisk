@@ -69,8 +69,8 @@ Add SWIG and Basilisk paths into environment variables using the following steps
     - Add the ``swig.exe`` directory to your path.  See this `site <https://stackoverflow.com/questions/48382254/cmake-error-could-not-find-swig-missing-swig-dir>`__
       for more info on setting paths for swig.
     - add the path to ``CMake\bin``, such as ``C:\Program Files\CMake\bin``
-    - Add the Basilisk library directory (``path2bsk/dist3/Basilisk``) to your path. Here,
-      ``path2bsk`` is replaced with the actual path to the Basilisk folder.  Note, the ``dist3`` folder does not
+    - Add the Basilisk library directory (``path2bsk/build/Basilisk``) to your path. Here,
+      ``path2bsk`` is replaced with the actual path to the Basilisk folder.  Note, the ``build`` folder does not
       exist to begin with, but is created automatically when configuring Basilisk with ``python conanfile.py``
       as discussed below.
 
@@ -156,7 +156,7 @@ When all the prerequisite installations are complete, the project can be built a
 
     (venv) $ python conanfile.py
 
-   This creates the Visual Studio 16 2019 IDE project in ``dist3`` and builds the project.
+   This creates the Visual Studio 16 2019 IDE project in ``build`` and builds the project.
    You can also specify the generator directly in this build process and select other versions of Visual Studio.
    For other configure and build options, including running ``cmake`` directly, see :ref:`configureBuild`.
    This process will verify that the minimum required Basilisk python packages are installed, and that
@@ -199,7 +199,7 @@ using:
 
    This will disable the build workflow so that you can build the project from the IDE.
 
-#. Open the Visual Studio project file inside ``dist3``.  This is ``basilisk.sln`` on Windows.
+#. Open the Visual Studio project file inside ``build``.  This is ``basilisk.sln`` on Windows.
 
      -  The source code should appear and be ready for use
 

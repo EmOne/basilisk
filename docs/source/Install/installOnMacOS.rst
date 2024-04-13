@@ -147,7 +147,7 @@ When all the prerequisite installations are complete, the project can be built a
         (.venv) $ python3 conanfile.py
 
    For other configure and build options, see :ref:`configureBuild`.  This creates the Xcode project in
-   ``dist3``.
+   ``build``.
 
    .. Warning:: Note that the default configuration is building for Release.  When you open the project in XCode, note
         that you need to build for profiling.  Otherwise you get errors about not being able to find appropriate
@@ -193,7 +193,7 @@ using:
 
     (venv) $ python3 conanfile.py --buildProject False
 
-#. Open the Xcode project file inside ``dist3``.  This is ``basilisk.xcodeproj`` on macOS.
+#. Open the Xcode project file inside ``build``.  This is ``basilisk.xcodeproj`` on macOS.
 
    -  The source code should appear and be ready for use
 

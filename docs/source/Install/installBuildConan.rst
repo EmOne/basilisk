@@ -27,11 +27,11 @@ Step 1: Installing Basilisk Dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The first command, in its minimalist form, is::
 
-    conan install . -if dist3/conan --build=missing
+    conan install . -if build/conan --build=missing
 
-This conan command will create the distribution folder, ``dist3`` in the above case, if needed, collect all the
+This conan command will create the distribution folder, ``build`` in the above case, if needed, collect all the
 require Basilisk 3rd party resources and compile them if their binaries are missing.  The cmake files to access these
-3rd party libraries are stored in ``dist3/conan``.
+3rd party libraries are stored in ``build/conan``.
 
 There are several options that can be provided to this ``conan install`` command as shown in the following table.
 Note that the option names for groupings of Basilisk modules are the same as with the one-step build above.
@@ -81,17 +81,17 @@ Note that the option names for groupings of Basilisk modules are the same as wit
 Thus, using the same build example as in the one-step section, to create a build with ``opNav`` modes enabled,
 but no :ref:`vizInterface`, and using a clean distribution folder, and that is built right away, you could use::
 
-    conan install . -if dist3/conan --build=missing -o clean=True -o buildProject=True -o opNav=True -o vizInterface=False
+    conan install . -if build/conan --build=missing -o clean=True -o buildProject=True -o opNav=True -o vizInterface=False
 
 Note how much more verbose this is, but it gives you full control if you want to store the compiled binaries and
-cmake files in directories other than ``dist3/conan``.
+cmake files in directories other than ``build/conan``.
 
 Step 2: Creating the IDE Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The final step is to create the IDE project file and possibly build the executables directly.
 At this stage there are no options to be provided.  This step is done with::
 
-    conan build . -if dist3/conan
+    conan build . -if build/conan
 
 .. warning::
 
@@ -103,7 +103,7 @@ Running ``cmake`` Directly
 --------------------------
 
 The ``conan install`` command must always be run to install the required dependencies and compile them.  If the
-developer wishes, the ``cmake`` can be run directly from the ``dist3`` distribution folder instead
+developer wishes, the ``cmake`` can be run directly from the ``build`` distribution folder instead
 of relying on the ``conan build`` step discussed above.
 
 The following table summarizes the optional Basilisk related flags that can be provided to ``cmake``.  If

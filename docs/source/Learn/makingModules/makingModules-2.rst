@@ -33,7 +33,7 @@ The ``#ifndef`` statement ensures this header file is only included once when co
 
 Creating the Msg C/C++ Interface Files
 --------------------------------------
-To create message objects in C and C++ modules, you need to run ``python3 conanfile.py`` again from in the Terminal or command line window.  This script auto-creates the corresponding C module interface files and stores them in ``basilisk/dist3/autoSource/cMsgCInterface``.  The C++ message objects are automatically created as a template class using the ``*.h`` definitions in ``msgPayloadDefC``.  Naturally no C module interface files are created for ``*.h`` files in ``msgPayloadDefCpp``.
+To create message objects in C and C++ modules, you need to run ``python3 conanfile.py`` again from in the Terminal or command line window.  This script auto-creates the corresponding C module interface files and stores them in ``basilisk/build/autoSource/cMsgCInterface``.  The C++ message objects are automatically created as a template class using the ``*.h`` definitions in ``msgPayloadDefC``.  Naturally no C module interface files are created for ``*.h`` files in ``msgPayloadDefCpp``.
 
 Running ``python3 conanfile.py`` re-creates the IDE project file that will now include access to the new message definition.
 

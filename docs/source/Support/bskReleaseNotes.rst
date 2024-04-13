@@ -687,7 +687,7 @@ Version 2.0.0
 - centerRadiusCNN is now supported on all the platforms
 - Support Terminal Progress bar while running a Basilisk simulation
 - Improved the build system to re-swig the module if the dependencies have changed.
-  This avoids having to do a clean build or manually deleting the swing python files from within ``dist3/Basilisk``.
+  This avoids having to do a clean build or manually deleting the swing python files from within ``build/Basilisk``.
 - All unit test cases are compatible with windows platform
 - Added scripting support for Vizard 1.7.0
 
@@ -1254,7 +1254,7 @@ Updated the Doxygen HTML documentation layout
 
 ADDED PYTHON 3 SUPPORT! This is a major step for Basilisk. Python 2
 remains suppored, but is now treated as a depreciated capability. It is
-possible to compile BSK for P3 into a ``dist3`` folder, and for P2 into
+possible to compile BSK for P3 into a ``build`` folder, and for P2 into
 a ``dist`` folder at the same time.
 
 .. raw:: html

@@ -44,7 +44,7 @@ The following Frequency Answer Questions are general and not operating system sp
 
    To do a basic clean build that will cover most odd cases, you can do this manually by
 
-     - delete the folder of ``dist3`` or ``dist`` and create a new folder with that name
+     - delete the folder of ``build`` or ``dist`` and create a new folder with that name
      - follow the regular configure and build instruction in :ref:`configureBuild`
 
    You can also use the ``clean`` flag in the instruction at :ref:`configureBuild` to do a clean and configure all in one.

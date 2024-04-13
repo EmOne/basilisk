@@ -3,7 +3,7 @@
 C Message Object
 ================
 
-This page describes the C functions to interact with C wrapped output and input message objects.  These methods are automatically created when running ``python3 conanfile.py`` and stored in ``basilisk/dist3/autoSource/cMsgCInterface``.
+This page describes the C functions to interact with C wrapped output and input message objects.  These methods are automatically created when running ``python3 conanfile.py`` and stored in ``basilisk/build/autoSource/cMsgCInterface``.
 
 Input Message
 -------------
